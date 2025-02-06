@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Drive Eligibility</title>
+    <style>
+        .red { background-color: red; color: white; padding: 10px; margin: 5px; }
+        .orange { background-color: orange; color: white; padding: 10px; margin: 5px; }
+        .green { background-color: green; color: white; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Placement Drive Eligibility for 10 Students</h2>
+    <div id="student1"></div>
+    <div id="student2"></div>
+    <div id="student3"></div>
+    <div id="student4"></div>
+    <div id="student5"></div>
+    <div id="student6"></div>
+    <div id="student7"></div>
+    <div id="student8"></div>
+    <div id="student9"></div>
+    <div id="student10"></div>
+
+    <script>
+        const cgpas = [7.3, 8.2, 7.6, 9.0, 7.4, 8.7, 7.1, 8.0, 9.2, 7.9];
+        function displayStatus(cgpa, studentId) {
+            let message = '';
+            let className = '';
+            if (cgpa >= 7.2 && cgpa <= 7.5) {
+                message = 'Not allowed to participate in the placement drive.';
+                className = 'red';
+            } else if (cgpa > 7.5 && cgpa <= 8.5) {
+                message = 'Maybe placed in the placement drive.';
+                className = 'orange';
+            } else if (cgpa > 8.5) {
+                message = 'Eligible for the placement drive.';
+                className = 'green';
+            }
+            document.getElementById(studentId).innerHTML = `<p><strong>Student ${studentId.charAt(studentId.length - 1)}</strong>: CGPA = ${cgpa} - ${message}</p>`;
+            document.getElementById(studentId).className = className;
+        }
+        for (let i = 0; i < cgpas.length; i++) {
+            displayStatus(cgpas[i], 'student' + (i + 1));
+        }
+    </script>
+</body>
+</html>
