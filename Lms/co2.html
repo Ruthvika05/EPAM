@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payslip Form</title>
+    <script>
+        function calculatePayslip() {
+            var basicSalary = 37900;
+            var workingDays = 30;
+            var daysPresent = document.getElementById("daysPresent").value;
+            var hraType = document.querySelector('input[name="hra"]:checked');
+
+            if (daysPresent < 0 || daysPresent > workingDays) {
+                alert("Please enter a valid number of days present.");
+                return false;
+            }
+
+            // Salary for present days
+            var salaryForPresentDays = (basicSalary * daysPresent) / workingDays;
+
+            // DNS (9% of Basic)
+            var dns = basicSalary * 0.09;
+
+            // HRA Calculation
+            var hra = 0;
+            if (hraType) {
+                if (hraType.value == "hostel") {
+                    hra = basicSalary * 0.3;
+                } else if (hraType.value == "room") {
+                    hra = basicSalary * 0.2;
+                }
+            }
+
+            // Total salary calculation
+            var totalSalary = salaryForPresentDays + dns + hra;
+
+            // Display the result
+            document.getElementById("salaryForPresentDays").innerText = "Salary for Present Days: ₹" + salaryForPresentDays.toFixed(2);
+            document.getElementById("dns").innerText = "DNS (9% of Basic): ₹" + dns.toFixed(2);
+            document.getElementById("hra").innerText = "HRA: ₹" + hra.toFixed(2);
+            document.getElementById("totalSalary").innerText = "Total Salary: ₹" + totalSalary.toFixed(2);
+
+            return false; // Prevent form submission for demonstration
+        }
+    </script>
+</head>
+<body>
+    <h2>Employee Payslip Form</h2>
+    <form onsubmit="return calculatePayslip()">
+        <label for="daysPresent">Number of Days Present (out of 30): </label>
+        <input type="number" id="daysPresent" required><br><br>
+
+        <label>HRA Type: </label><br>
+        <input type="radio" id="hostel" name="hra" value="hostel" required> Hostel (30% of Basic)<br>
+        <input type="radio" id="room" name="hra" value="room"> Room (20% of Basic)<br>
+        <input type="radio" id="home" name="hra" value="home"> Home (0% of Basic)<br><br>
+
+        <input type="submit" value="Calculate Payslip">
+    </form>
+
+    <h3>Calculated Payslip</h3>
+    <p id="salaryForPresentDays">Salary for Present Days: ₹0.00</p>
+    <p id="dns">DNS (9% of Basic): ₹0.00</p>
+    <p id="hra">HRA: ₹0.00</p>
+    <p id="totalSalary">Total Salary: ₹0.00</p>
+</body>
+</html>
