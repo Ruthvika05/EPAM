@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Profit Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black; /* Black background */
+            color: white; /* White text */
+            padding: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Deposit Profit Calculator</h2>
+
+    <button onclick="calculateProfit()">Calculate Profit</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateProfit() {
+            // Step 1: Get user input
+            let amount = parseFloat(prompt("Enter your initial deposit amount:"));
+
+            // Step 2: Define interest rate
+            const interestRate = 0.05; // 5% annual interest
+
+            // Step 3: Validate input
+            if (isNaN(amount) || amount <= 0) {
+                alert("Please enter a valid positive amount!");
+                return;
+            }
+
+            // Step 4: Calculate profit
+            let profit = amount * interestRate;
+            let total = amount + profit;
+
+            // Step 5: Display result
+            document.getElementById("result").innerHTML = 
+                `Initial Amount: $${amount.toFixed(2)} <br> 
+                 Annual Interest Rate: 5% <br> 
+                 Profit Earned: $${profit.toFixed(2)} <br> 
+                 Total Balance: $${total.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
