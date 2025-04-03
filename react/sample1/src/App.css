@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: red; /* Full red background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+}
+
+.university-name {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
