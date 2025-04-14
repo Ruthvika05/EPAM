@@ -1,0 +1,42 @@
+/* Body Background */
+body {
+    background-color: #d4fcd4; /* Light green */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Puzzle Container */
+  #puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Puzzle Tiles */
+  .tile {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* Empty Tile */
+  .empty {
+    background-color: #ecf0f1;
+    cursor: default;
+  }
+  
+  /* Info Section */
+  #info {
+    margin-bottom: 15px;
+  }
+  

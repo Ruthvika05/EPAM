@@ -1,0 +1,68 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* Task 1: Button Click Alert */
+  /* ========================== */
+  #task1 {
+    background-color: #e0f7fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  #alertButton {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  /* Task 2: Input Field Live Preview */
+  /* =============================== */
+  #task2 {
+    background-color: #fff3e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  #liveInput {
+    padding: 8px;
+    font-size: 14px;
+  }
+  #livePreview {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Task 3: Mouseover Color Change */
+  /* ============================== */
+  #task3 {
+    background-color: #fce4ec;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  #colorBox {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+  }
+  
+  /* Task 4: Keydown Counter */
+  /* ======================= */
+  #task4 {
+    background-color: #e8f5e9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  #keyInput {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
